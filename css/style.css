@@ -1,0 +1,826 @@
+/* idéer till sidan --- moodboarden ska ha en animation om det finns tid https://css-tricks.com/aos-css-driven-scroll-animation-library/ */
+/* hoover över bilden på startsidan så kommer en knapp upp "kolla in min konst" */
+/* #f4dbba */
+	/* CSS body */
+@import url(@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap');
+@font-face {
+	font-family: bebas;
+	src: url("../fonts/BebasNeue-Regular.otf");
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body {
+	text-align: center;
+	font-family: 'Slabo 27px', serif;
+	font-family: arial, helvetica, sans-serif;
+	height: 100%;
+  	background-image: url("../bilder/bakgrund-QUL.jpg");
+  	background-repeat: repeat; 
+  	font-family: bebas;
+}
+
+header {
+	text-align: center;
+	margin-top: 20px;
+	font-family: bebas;
+	font-size: 20px;
+	letter-spacing: 15px;
+	margin-bottom: 10px;
+}
+
+.header-icons {
+	width: 50%;
+	height: auto;
+}
+
+section {
+	max-width: 80%;
+	margin: 0 auto;
+	padding: 50px 0; 
+}
+
+footer {
+	height: 150px;
+	text-align: center;
+}
+
+.body-wrapper {
+	position: relative;
+	background: white;
+  	width: 80%;
+  	margin: 0 auto;
+  	border: 1px #eee solid; 
+}
+
+	a:link { color: #000; text-decoration: none; }
+	a:visited { color: #000; }
+	a:hover { color: #000; }
+	a:active { color: #000; } 
+
+	/* Menu */
+
+.wrapper {
+  font-family: bebas;
+  overflow-x: hidden;
+  background: white;
+  width: 80%;
+  margin: 0 auto; 
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 5px;
+  font-family: bebas;
+  letter-spacing: 4px;
+}
+
+.hr-line {
+	width: 60%;
+	margin: auto;
+}
+
+.menu {
+  width: 80%;
+  position: fixed;
+  margin-left: -80%;
+  background-position: center;
+  left: 0px;
+  height: 100%;
+  padding: 20% 50px;
+  font-size: 30px;
+  transition: margin 1s;
+  background-color: coral;
+  margin-top: -20px;
+  z-index: 9;
+}
+
+input[type=checkbox] {
+  position: fixed;
+  opacity:0;
+}
+
+.nav-toggle {
+  display: block;
+  position: fixed;
+  top: 26px;
+  left: 0;
+  width: 50px;
+ /* height: 40px;*/
+  cursor: pointer;
+  z-index: 99;
+  transition: margin 1s;
+}
+
+.cart-toggle {
+  display: block;
+  position: fixed;
+  top: 24px;
+  right: 0;
+  width: 40px;
+  height: 32px;
+  cursor: pointer;
+  z-index: 99;
+}
+
+	/*placering av meny iconen*/ 
+input[type=checkbox]:checked ~ .nav-toggle {
+  margin-left: 0px;
+}
+	/*placering av meny text*/
+input[type=checkbox]:checked ~ .menu {
+  margin-left: 0;
+}
+input[type=checkbox]:checked ~ .cart-toggle {
+  margin-right: 0;
+}
+	/*placering av section*/
+/*input[type=checkbox]:checked ~ section {
+  margin-left: 0;
+}*/
+
+	.menu a:link { color: #000; text-decoration: none; }
+	.menu a:visited { color: #000; }
+	.menu a:hover { color: #ffb79c; }
+	.menu a:active { color: #000; } 
+
+	/* first-page */
+/*.first-page-img {
+	width:200px; 
+    height:200px; 
+    background-image: url(../CME/bilder/EYEBWW-HERO.jpg);
+}	
+
+.shop-link {
+	position: absolute;
+}*/
+
+.first-page-img { 
+   position: relative; 
+   width: 100%;
+   height: auto;
+}
+
+.top-right { 
+	font-family: bebas;
+	font-size: 30px;
+	position: absolute; 
+	top: 5%;
+	right: 0;
+	background-color: #fff;
+	padding: 20px 20px;
+}
+
+.top-right:hover {
+	text-decoration: underline;
+}
+
+	/* font text garamond --- kanske måste byta */
+
+p {
+	font-family: 'EB Garamond', serif;
+}
+
+.polaroid img {
+  	max-width: 250px;
+  	margin-top: 40px;
+}
+
+.first-page-img {
+	width: 90%; 
+    height: auto; 
+}	
+
+.shop-link {
+	position: absolute;
+}
+
+.first-page-img { 
+   	position: relative; 
+   	width: 100%; /* for IE 6 */
+}
+
+.top-right { 
+   	position: absolute; 
+   	top: 8%;
+   	right: 0;
+   	background-color: #fff;
+   	padding: 20px 20px;
+   	letter-spacing: 4px;
+}
+
+	/* moodboard */
+.wrapper-moodboard {
+  	position: relative;
+  	width: 100%;
+  	height: 1300px;
+  	margin: 0 auto;
+  	font-family: bebas;
+  	font-family: 
+}
+
+/*
+            TASK 2) Change position of CSS elements.         *********************************************************************
+            Hey again! We're now in CSS. You'll see below how all the elements stack up together. Right now, changing their left, top, right or bottom values further down will have no effect. If you change the below to position-relative, all the elements will move around relative to each other. But with position absolute CSS, each item is on its own layer and isnt affected by other things. Make sure you change back to 'position: absolute;' afterwards.
+        */
+.post-it-note,.polaroid {
+  	position: absolute;
+  	width: 350px;
+  	height: 450px;
+}
+
+/* Basic styles for the post it note*/
+.post-it-note {
+  	padding: 10px;
+  	margin: 0;
+  	background: #FFF;
+  	display: inline-block;
+  	border: solid #ddd 1px;
+}
+
+/* Colour classes for the post it notes */
+.yellow {
+  	width: 350px;
+  	height: 450px;
+  	position: absolute;
+  	top: 12%;
+  	right: 4%;
+  	z-index: 0;
+	background: repeating-linear-gradient(
+	  45deg,
+	  #f4dbba,
+	  #f4dbba 8px,
+	  #fff 8px,
+	  #fff 12px
+	);
+}
+
+.red {
+  	background-color: #d23838;
+  	width: 350px;
+  	height: 350px;
+  	position: absolute;
+  	bottom: 14%;
+  	left: 16%;
+  	z-index: 0;
+	background: repeating-linear-gradient(
+	  45deg,
+	  #f4dbba,
+	  #f4dbba 8px,
+	  #fff 8px,
+	  #fff 12px
+	);
+}
+
+.blue {
+	width: 350px;
+  	height: 400px;
+  	position: absolute;
+  	background-color: #5c97ee;
+  	right: 5%;
+	bottom: 0%;
+	background: repeating-linear-gradient(
+	  45deg,
+	  #f4dbba,
+	  #f4dbba 8px,
+	  #fff 8px,
+	  #fff 12px
+	);
+}
+
+.blue-1 {
+	width: 300px;
+  	height: 300px;
+  	position: absolute;
+  	background-color: #5c97ee;
+  	left: 3%;
+	top: 18%;
+	background: repeating-linear-gradient(
+	  45deg,
+	  #f4dbba,
+	  #f4dbba 8px,
+	  #fff 8px,
+	  #fff 12px
+	);
+}
+
+/* Font styling for headings and text inside the post it notes */
+p,h1,h2,h3,h4,h5 {
+  	margin-top: 0;
+}
+
+/* Each <figure> will ask as a polaroid so we can just style the <figure> without a class name */
+.polaroid {
+  	padding: 10px;
+  	margin: 0;
+  	background: #FFF;	
+  	border: solid 1px #ddd;
+}
+
+.polaroid img {
+  	max-width: 250px;
+  	margin-top: 40px;
+}
+
+.polaroid figcaption {
+  	font-family: Neucha, sans-serif;
+}
+
+#note-1 {
+  	bottom: 4%;
+  	right: 10%;
+  	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.4);
+}
+
+#note-2 {
+  	top: 16%;
+  	right: 10%;
+  	box-shadow: 10px -10px 10px 0px rgba(0,0,0,0.4);
+}
+
+#note-3 {
+  	bottom: 18%;
+  	left: 10%;
+  	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.4);
+}
+
+#picture-1 {
+	top: 10%;
+  	left: 10%;
+  	z-index: 1;
+  	box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.40);
+  	height: 350px;
+}
+
+.post-it-note-text {
+	text-align: justify;
+	margin: 20px 20px;
+	line-height: 20px;
+}
+	
+	/* tavelväggen */
+
+.selk-moodboard {
+--selk-accent:#A30413;
+}
+
+.selk-moodboard {
+	width: 100%;
+	
+}
+
+.selk-board {
+	height:auto;
+	padding:25px 0px 0px 0px;
+	width:100%;
+	display:flex;
+	flex-flow:row wrap;
+
+}
+
+.selk-board div {
+	padding:10px;
+	border-radius:5px;
+}
+
+	/* Shop */
+.product-img {
+	width: 100%;
+	height: auto;
+}
+
+.grid-container {
+	display: grid;
+	width: 100%;
+	justify-items: center;
+	height: auto;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+}
+
+.grid-item {
+	width: 100%;
+	height: 100%;
+	/*display: inline-block;*/
+}
+
+.view-product {
+	color: #333;
+	width: 100%;
+	display: block;
+	margin: 0;
+}
+
+.view-product * {
+	color: #333;
+}
+
+.product-name {
+	width: 100%;
+	font-size: 18px;
+	text-align: left;
+}
+
+.price {
+	width:100%;
+	bottom: 44px;
+	font-size: 16px;
+	text-align: left;
+	margin-bottom: 80px;
+}
+
+.add-to-cart {
+	height: 82px;
+	line-height: 44px;
+	width: 100%;
+	color: black;
+	font-size: 16px;
+	text-align: left;
+}
+
+	/* Portfolio */
+.section-portfolio {
+	max-width: 90%;
+}
+
+.pic-text {
+
+}
+
+.pic-port {
+	margin-left: 10%;
+	float: left;
+}
+
+/*.pic-text {
+	margin-left: 40px;
+}*/
+
+	/* Footer content */
+.footer-column {
+	display: flex;
+	justify-content: center;
+}
+
+.footer-column-1 {
+	margin: 30px;
+}
+
+
+.om-mig-text {
+	width: 50%;
+}
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 992px){
+	
+	header {
+		font-size: 50px;
+	}
+
+	.header-icons {
+		width: 80%;
+	}
+
+	section {
+		max-width: 80%;
+		margin: 0 auto;
+		padding: 50px 0; 
+	}
+
+	footer {
+		height: 150px;
+		text-align: center;
+	}
+
+	.body-wrapper {
+		position: relative;
+		background: white;
+	  	width: 80%;
+	  	margin: 0 auto;
+	  	border: 1px #eee solid; 
+	}
+
+		a:link { color: #000; text-decoration: none; }
+		a:visited { color: #000; }
+		a:hover { color: #000; }
+		a:active { color: #000; } 
+
+		/* Menu */
+
+	.wrapper {
+	  	font: 20px/200% arial, helvetica, sans-serif;
+	  	overflow-x: hidden;
+	  	background: white;
+	  	width: 80%;
+	  	margin: 0 auto; 
+	}
+
+	ul {
+	  	list-style: none;
+	  	padding-top: 20%;
+
+	}
+
+	li {
+	  	margin: 10px 0px;
+	}
+
+	.menu {
+	  	width: 400px;
+	  	position: fixed;
+	  	margin-left: -400px;
+	  	background-position: center;
+	  	left: 0px;
+	  	height: 100%;
+	  	padding: 30px 50px;
+	  	font-size: 30px;
+	  	transition: margin 1s;
+	  	background-color: coral;
+	  	margin-top: -20px;
+	  	z-index: 9;
+	}
+
+	input[type=checkbox] {
+	  	position: fixed;
+	  	opacity:0;
+	}
+
+	.nav-toggle {
+	  	display: block;
+	  	position: fixed;
+	  	top: 60px;
+	  	left: 4%;
+	  	height: 32px;
+	  	width: 40px;
+	  	cursor: pointer;
+	  	z-index: 99;
+	  	margin-right: 10px;
+	  	transition: margin 1s;
+	}
+
+	.cart-toggle {
+	  	display: block;
+	  	position: fixed;
+	  	top: 60px;
+	  	right: 4%;
+	  	height: 32px;
+	  	width: 40px;
+	  	cursor: pointer;
+	  	z-index: 99;
+	}
+
+			/*placering av meny iconen*/ 
+	input[type=checkbox]:checked ~ .nav-toggle {
+	  	margin-left: 200px;
+	}
+		/*placering av meny text*/
+	input[type=checkbox]:checked ~ .menu {
+	  	margin-left: 0;
+	}
+	input[type=checkbox]:checked ~ .cart-toggle {
+	  	margin-right: 0;
+	}
+
+		/* first-page */
+	.first-page-img {
+		width: 90%; 
+	    height: auto; 
+	}	
+
+	.shop-link {
+		position: absolute;
+	}
+
+	.first-page-img { 
+	   	position: relative; 
+	   	width: 100%; /* for IE 6 */
+	}
+
+	.top-right { 
+	   	position: absolute; 
+	   	top: 8%;
+	   	right: 0;
+	   	background-color: #fff;
+	   	padding: 20px 20px;
+	   	letter-spacing: 4px;
+	}
+
+		/* moodboard */
+	.wrapper-moodboard {
+	  	position: relative;
+	  	width: 100%;
+	  	height: 1300px;
+	  	margin: 0 auto;
+	  	font-style: 
+	}
+
+	/*
+	            TASK 2) Change position of CSS elements.         *********************************************************************
+	            Hey again! We're now in CSS. You'll see below how all the elements stack up together. Right now, changing their left, top, right or bottom values further down will have no effect. If you change the below to position-relative, all the elements will move around relative to each other. But with position absolute CSS, each item is on its own layer and isnt affected by other things. Make sure you change back to 'position: absolute;' afterwards.
+	        */
+	.post-it-note,.polaroid {
+	  	position: absolute;
+	  	width: 350px;
+	  	height: 450px;
+	}
+
+	/* Basic styles for the post it note*/
+	.post-it-note {
+	  	padding: 10px;
+	  	margin: 0;
+	  	background: #FFF;
+	  	display: inline-block;
+	  	border: solid #ddd 1px;
+	}
+
+	/* Colour classes for the post it notes */
+	.yellow {
+	  	width: 350px;
+	  	height: 450px;
+	  	position: absolute;
+	  	top: 12%;
+	  	right: 4%;
+	  	z-index: 0;
+		background: repeating-linear-gradient(
+		  45deg,
+		  #f4dbba,
+		  #f4dbba 8px,
+		  #fff 8px,
+		  #fff 12px
+		);
+	}
+
+	.red {
+	  	background-color: #d23838;
+	  	width: 350px;
+	  	height: 350px;
+	  	position: absolute;
+	  	bottom: 14%;
+	  	left: 16%;
+	  	z-index: 0;
+		background: repeating-linear-gradient(
+		  45deg,
+		  #f4dbba,
+		  #f4dbba 8px,
+		  #fff 8px,
+		  #fff 12px
+		);
+	}
+
+	.blue {
+		width: 350px;
+	  	height: 400px;
+	  	position: absolute;
+	  	background-color: #5c97ee;
+	  	right: 5%;
+		bottom: 0%;
+		background: repeating-linear-gradient(
+		  45deg,
+		  #f4dbba,
+		  #f4dbba 8px,
+		  #fff 8px,
+		  #fff 12px
+		);
+	}
+
+	.blue-1 {
+		width: 300px;
+	  	height: 300px;
+	  	position: absolute;
+	  	background-color: #5c97ee;
+	  	left: 3%;
+		top: 18%;
+		background: repeating-linear-gradient(
+		  45deg,
+		  #f4dbba,
+		  #f4dbba 8px,
+		  #fff 8px,
+		  #fff 12px
+		);
+	}
+
+	/* Font styling for headings and text inside the post it notes */
+	p,h1,h2,h3,h4,h5 {
+	  	margin-top: 0;
+	}
+
+	/* Each <figure> will ask as a polaroid so we can just style the <figure> without a class name */
+	.polaroid {
+	  	padding: 10px;
+	  	margin: 0;
+	  	background: #FFF;
+	  	
+	  	border: solid 1px #ddd;
+	}
+
+	.polaroid img {
+	  	max-width: 250px;
+	  	margin-top: 40px;
+	}
+
+	.polaroid figcaption {
+	  	font-family: Neucha, sans-serif;
+	}
+
+	#note-1 {
+	  	bottom: 4%;
+	  	right: 10%;
+	  	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.4);
+	}
+
+	#note-2 {
+	  	top: 16%;
+	  	right: 10%;
+	  	box-shadow: 10px -10px 10px 0px rgba(0,0,0,0.4);
+	}
+
+	#note-3 {
+	  	bottom: 18%;
+	  	left: 10%;
+	  	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.4);
+	}
+
+	#picture-1 {
+		top: 10%;
+	  	left: 10%;
+	  	z-index: 1;
+	  	box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.40);
+	  	height: 350px;
+	}
+		
+		/* tavelväggen */
+
+	.selk-moodboard {
+	--selk-accent: #A30413;
+	}
+
+	.selk-moodboard {
+		width: 100%;
+		
+	}
+
+	.selk-board {
+		height: auto;
+		padding: 25px 0px 0px 0px;
+		width: 100%;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: flex-end;
+		justify-content: center;
+	}
+
+	.selk-board div {
+		padding: 10px;
+		border-radius: 5px;
+	}
+
+	/* Shop --- grid */
+	.grid-container {
+		height: auto;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto;
+	}
+
+	.grid-item {
+		width: 75%;
+  		height: 100%;
+		/*display: inline-block;*/
+	}
+
+		/* Footer content */
+	.footer-column {
+		display: flex;
+		justify-content: center;
+	}
+
+	.footer-column-1 {
+		width: 15%;
+		margin-top: 30px;
+	}
+
+	.letter-spacing-p {
+		letter-spacing: 1.5px;
+	}
+}
+
+
+
+
+
+
+
+
